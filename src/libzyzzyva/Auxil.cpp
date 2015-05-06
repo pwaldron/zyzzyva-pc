@@ -460,9 +460,6 @@ Auxil::getLexiconPrefix(const QString& lexicon)
 //! @param lexicon the lexicon name
 //! @return the database filename, or empty string if error
 //---------------------------------------------------------------------------
-
-#include <QMessageBox>
-
 QString
 Auxil::getDatabaseFilename(const QString& lexicon)
 {
