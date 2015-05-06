@@ -434,6 +434,7 @@ Auxil::getLexiconPrefix(const QString& lexicon)
     if (pmap.isEmpty()) {
         pmap[LEXICON_OWL] = "/North-American/OWL";
         pmap[LEXICON_OWL2] = "/North-American/OWL2";
+        pmap[LEXICON_OWL3] = "/North-American/OWL3";
         pmap[LEXICON_OSPD4] = "/North-American/OSPD4";
         pmap[LEXICON_WWF] = "/North-American/WWF";
         pmap[LEXICON_VOLOST] = "/Antarctic/Volost";
@@ -459,6 +460,9 @@ Auxil::getLexiconPrefix(const QString& lexicon)
 //! @param lexicon the lexicon name
 //! @return the database filename, or empty string if error
 //---------------------------------------------------------------------------
+
+#include <QMessageBox>
+
 QString
 Auxil::getDatabaseFilename(const QString& lexicon)
 {
@@ -1339,6 +1343,8 @@ Auxil::lexiconToOrigin(const QString& lexicon)
         return "North American";
     if (lexicon == LEXICON_OWL2)
         return "North American";
+    if (lexicon == LEXICON_OWL3)
+        return "North American";
     if (lexicon == LEXICON_OSPD4)
         return "North American (School)";
     if (lexicon == LEXICON_WWF)
@@ -1379,6 +1385,8 @@ Auxil::lexiconToDate(const QString& lexicon)
         return QDate(2003, 7, 1);
     if (lexicon == LEXICON_OWL2)
         return QDate(2006, 3, 1);
+    if (lexicon == LEXICON_OWL3)
+        return QDate(2015, 1, 1);
     if (lexicon == LEXICON_OSPD4)
         return QDate(2006, 3, 1);
     if (lexicon == LEXICON_WWF)
@@ -1453,6 +1461,7 @@ Auxil::getUpdatedLexiconName(const QString& oldLexiconName)
     else if ((oldLexiconName == LEXICON_CUSTOM) ||
              (oldLexiconName == LEXICON_OWL) ||
              (oldLexiconName == LEXICON_OWL2) ||
+             (oldLexiconName == LEXICON_OWL3) ||
              (oldLexiconName == LEXICON_WWF) ||
              (oldLexiconName == LEXICON_CSW07) ||
              (oldLexiconName == LEXICON_CSW12) ||
