@@ -79,6 +79,7 @@ LexiconSelectDialog::LexiconSelectDialog(QWidget* parent, Qt::WFlags f)
     mainGlay->addWidget(dateHeaderLabel, 0, 4, Qt::AlignHCenter);
 
     QStringList validLexicons;
+    validLexicons.append(LEXICON_OWL3);
     validLexicons.append(LEXICON_OWL2);
     validLexicons.append(LEXICON_OSPD4);
     validLexicons.append(LEXICON_CSW12);
